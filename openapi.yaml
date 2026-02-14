@@ -1,0 +1,80 @@
+openapi: 3.0.4
+info:
+  title: Savings Bonds
+  description: >-
+    Savings Bonds provides current and historical rates for US Savings Bonds
+    including Series I (I Bonds) and Series EE bonds. Includes rate components,
+    purchase limits, and comparison recommendations.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/savingsbonds:
+    get:
+      summary: Get Savings Bond Rates
+      description: Get current savings bond rates and comparison
+      operationId: savingsbonds
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+          required: false
+          description: 'Bond type: ''i'' for I Bonds, ''ee'' for EE Bonds. Omit for both.'
+          example: i
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  iBonds:
+                    currentRate: 5.27
+                    fixedRate: 1.3
+                    inflationRate: 1.97
+                    purchaseLimit: 10000
+                  eeBonds:
+                    currentRate: 2.7
+                    guaranteedDoubling: 20 years (guaranteed to double in value)
+                    purchaseLimit: 10000
+                  recommendation: I Bonds
+                  recommendationReason: I Bonds currently offer 5.27% vs EE Bonds at 2.70%
+                  nextRateChange: '2024-05-01'
+                  lastUpdated: '2024-02-01T00:00:00.000Z'
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []

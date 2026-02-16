@@ -230,8 +230,9 @@ from apiverve_savingsbonds.apiClient import SavingsbondsAPIClient
 
 api = SavingsbondsAPIClient("[YOUR_API_KEY]")
 
+query = { "type": "i" }
+
 try:
-    query = { "type": "i" }
     result = api.execute(query)
     print(result)
 finally:

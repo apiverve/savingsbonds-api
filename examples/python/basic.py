@@ -1,7 +1,7 @@
 """
-Savings Bonds API - Basic Usage Example
+I-Bond Rates API - Basic Usage Example
 
-This example demonstrates the basic usage of the Savings Bonds API.
+This example demonstrates the basic usage of the I-Bond Rates API.
 API Documentation: https://docs.apiverve.com/ref/savingsbonds
 """
 
@@ -14,7 +14,7 @@ API_URL = 'https://api.apiverve.com/v1/savingsbonds'
 
 def call_savingsbonds_api():
     """
-    Make a GET request to the Savings Bonds API
+    Make a GET request to the I-Bond Rates API
     """
     try:
         headers = {
@@ -42,7 +42,7 @@ def call_savingsbonds_api():
         return None
 
 if __name__ == '__main__':
-    print('📤 Calling Savings Bonds API...\n')
+    print('📤 Calling I-Bond Rates API...\n')
 
     result = call_savingsbonds_api()
 

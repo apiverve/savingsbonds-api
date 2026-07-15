@@ -1,4 +1,4 @@
-# Contributing to Savings Bonds API
+# Contributing to I-Bond Rates API
 
 Thank you for your interest in contributing! This guide will help you get started.
 

@@ -1,10 +1,11 @@
 openapi: 3.0.4
 info:
-  title: Savings Bonds
+  title: I-Bond Rates
   description: >-
-    Savings Bonds provides current and historical rates for US Savings Bonds
-    including Series I (I Bonds) and Series EE bonds. Includes rate components,
-    purchase limits, and comparison recommendations.
+    I-Bond Rates provides current and historical interest rates for US Series I
+    Savings Bonds. I-Bonds are inflation-protected savings bonds with a
+    composite rate made up of a fixed rate plus an inflation rate that adjusts
+    every 6 months.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,17 +20,19 @@ servers:
 paths:
   /v1/savingsbonds:
     get:
-      summary: Get Savings Bond Rates
-      description: Get current savings bond rates and comparison
+      summary: Get I-Bond Rates
+      description: Get current I-Bond rates and historical rate data
       operationId: savingsbonds
       parameters:
-        - name: type
+        - name: period
           in: query
           schema:
             type: string
           required: false
-          description: 'Bond type: ''i'' for I Bonds, ''ee'' for EE Bonds. Omit for both.'
-          example: i
+          description: >-
+            Specific issue period to lookup (YYYY-MM format, e.g., 2024-11).
+            Omit for current rates.
+          example: 2024-11
       responses:
         '200':
           description: Successful Response

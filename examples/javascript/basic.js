@@ -1,7 +1,7 @@
 /**
- * Savings Bonds API - Basic Usage Example
+ * I-Bond Rates API - Basic Usage Example
  *
- * This example demonstrates the basic usage of the Savings Bonds API.
+ * This example demonstrates the basic usage of the I-Bond Rates API.
  * API Documentation: https://docs.apiverve.com/ref/savingsbonds
  */
 
@@ -9,9 +9,9 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/savingsbonds';
 
 /**
- * Make a GET request to the Savings Bonds API
+ * Make a GET request to the I-Bond Rates API
  */
-async function callSavingsBondsAPI() {
+async function callI-BondRatesAPI() {
   try {
     const response = await fetch(API_URL, {
       method: 'GET',
@@ -44,7 +44,7 @@ async function callSavingsBondsAPI() {
 }
 
 // Run the example
-callSavingsBondsAPI()
+callI-BondRatesAPI()
   .then(result => {
     if (result) {
       console.log('\n📊 Final Result:');

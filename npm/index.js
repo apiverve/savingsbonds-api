@@ -30,7 +30,7 @@ class savingsbondsWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/savingsbonds';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"type":{"type":"string","required":false}};
+        this.validationRules = {"period":{"type":"string","required":false}};
     }
 
     /**

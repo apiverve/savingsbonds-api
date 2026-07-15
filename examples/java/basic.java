@@ -1,4 +1,4 @@
-import com.apiverve.savingsbonds.SavingsBondsAPIClient;
+import com.apiverve.savingsbonds.I-BondRatesAPIClient;
 import com.apiverve.savingsbonds.APIResponse;
 import com.apiverve.savingsbonds.APIException;
 import org.json.JSONObject;
@@ -9,7 +9,7 @@ import java.util.Map;
 public class BasicExample {
     public static void main(String[] args) {
         // Initialize the API client with your API key
-        SavingsBondsAPIClient client = new SavingsBondsAPIClient("YOUR_API_KEY_HERE");
+        I-BondRatesAPIClient client = new I-BondRatesAPIClient("YOUR_API_KEY_HERE");
 
         try {
             // Execute the API request (no parameters required)

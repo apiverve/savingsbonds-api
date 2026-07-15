@@ -1,7 +1,7 @@
 /**
- * Savings Bonds API - Error Handling Example
+ * I-Bond Rates API - Error Handling Example
  *
- * This example demonstrates proper error handling when using the Savings Bonds API.
+ * This example demonstrates proper error handling when using the I-Bond Rates API.
  * API Documentation: https://docs.apiverve.com/ref/savingsbonds
  */
 
@@ -20,7 +20,7 @@ class APIError extends Error {
 /**
  * Make an API call with comprehensive error handling
  */
-async function callSavingsBondsAPIWithErrorHandling(queryParams = {}) {
+async function callI-BondRatesAPIWithErrorHandling(queryParams = {}) {
   try {
     console.log('📤 Making API request...');
 
@@ -105,7 +105,7 @@ async function callWithRetry(maxRetries = 3, initialDelay = 1000) {
     try {
       console.log(`\n🔄 Attempt ${attempt}/${maxRetries}`);
 
-      const result = await callSavingsBondsAPIWithErrorHandling({
+      const result = await callI-BondRatesAPIWithErrorHandling({
         // Your query parameters here
       });
 

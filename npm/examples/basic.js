@@ -1,7 +1,7 @@
 /**
- * Basic Example - Savings Bonds API
+ * Basic Example - I-Bond Rates API
  *
- * This example demonstrates how to use the Savings Bonds API.
+ * This example demonstrates how to use the I-Bond Rates API.
  * Make sure to set your API key in the .env file or replace '[YOUR_API_KEY]' below.
  */
 
@@ -15,11 +15,11 @@ const api = new savingsbondsAPI({
 
 // Example query
 var query = {
-  type: "i"
+  period: "2024-11"
 };
 
 // Make the API request using callback
-console.log('Making request to Savings Bonds API...\n');
+console.log('Making request to I-Bond Rates API...\n');
 
 api.execute(query, function (error, data) {
     if (error) {

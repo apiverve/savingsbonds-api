@@ -1,8 +1,8 @@
-# [Savings Bonds API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 
-Savings Bonds provides current and historical rates for US Savings Bonds including Series I (I Bonds) and Series EE bonds. Includes rate components, purchase limits, and comparison recommendations.
+I-Bond Rates provides current and historical interest rates for US Series I Savings Bonds. I-Bonds are inflation-protected savings bonds with a composite rate made up of a fixed rate plus an inflation rate that adjusts every 6 months.
 
-The Savings Bonds API provides a simple, reliable way to integrate savings bonds functionality into your applications. Built for developers who need production-ready savings bonds capabilities without the complexity of building from scratch.
+The I-Bond Rates API provides a simple, reliable way to integrate i-bond rates functionality into your applications. Built for developers who need production-ready i-bond rates capabilities without the complexity of building from scratch.
 
 **[View API Details →](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
 
@@ -13,7 +13,7 @@ The Savings Bonds API provides a simple, reliable way to integrate savings bonds
 
 **Available on:**
 [![npm](https://img.shields.io/badge/npm-CB3837?style=flat&logo=npm&logoColor=white)](https://www.npmjs.com/package/@apiverve/savingsbonds)
-[![NuGet](https://img.shields.io/badge/NuGet-004880?style=flat&logo=nuget&logoColor=white)](https://www.nuget.org/packages/APIVerve.API.SavingsBonds)
+[![NuGet](https://img.shields.io/badge/NuGet-004880?style=flat&logo=nuget&logoColor=white)](https://www.nuget.org/packages/APIVerve.API.I-BondRates)
 [![PyPI](https://img.shields.io/badge/PyPI-3776AB?style=flat&logo=python&logoColor=white)](https://pypi.org/project/apiverve-savingsbonds/)
 [![RubyGems](https://img.shields.io/badge/RubyGems-E9573F?style=flat&logo=rubygems&logoColor=white)](https://rubygems.org/gems/apiverve_savingsbonds)
 [![Packagist](https://img.shields.io/badge/Packagist-F28D1A?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/apiverve/savingsbonds)
@@ -28,7 +28,7 @@ The Savings Bonds API provides a simple, reliable way to integrate savings bonds
 ### Using JavaScript
 
 ```javascript
-async function callSavingsBondsAPI() {
+async function callI-BondRatesAPI() {
     try {
         const response = await fetch('https://api.apiverve.com/v1/savingsbonds', {
             method: 'GET',
@@ -44,13 +44,13 @@ async function callSavingsBondsAPI() {
     }
 }
 
-callSavingsBondsAPI();
+callI-BondRatesAPI();
 ```
 
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/savingsbonds?param=value" \
+curl -X GET "https://api.apiverve.com/v1/savingsbonds" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -77,10 +77,10 @@ npm install @apiverve/savingsbonds
 ### 🔷 NuGet (.NET/C#)
 
 ```bash
-dotnet add package APIVerve.API.SavingsBonds
+dotnet add package APIVerve.API.I-BondRates
 ```
 
-[**View NuGet Package →**](https://www.nuget.org/packages/APIVerve.API.SavingsBonds) | [**Package Code →**](./nuget/)
+[**View NuGet Package →**](https://www.nuget.org/packages/APIVerve.API.I-BondRates) | [**Package Code →**](./nuget/)
 
 ---
 
@@ -150,14 +150,14 @@ go get github.com/apiverve/savingsbonds-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
 
 ## Documentation
 
-- 🏠 **API Home:** [Savings Bonds API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/savingsbonds](https://docs.apiverve.com/ref/savingsbonds)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -166,12 +166,12 @@ go get github.com/apiverve/savingsbonds-api/go
 
 ## What Can You Build?
 
-The Savings Bonds API is commonly used for:
+The I-Bond Rates API is commonly used for:
 
-- **Web Applications** - Add savings bonds features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Web Applications** - Add i-bond rates features to your frontend or backend
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
-- **SaaS Products** - Enhance your product with savings bonds capabilities
+- **SaaS Products** - Enhance your product with i-bond rates capabilities
 - **Data Pipelines** - Process and analyze data at scale
 
 ---
@@ -199,7 +199,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Savings Bonds API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

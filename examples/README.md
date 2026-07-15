@@ -1,6 +1,6 @@
-# Savings Bonds API - Examples
+# I-Bond Rates API - Examples
 
-This folder contains example code for using the Savings Bonds API across different platforms.
+This folder contains example code for using the I-Bond Rates API across different platforms.
 
 ## 📁 Examples Structure
 

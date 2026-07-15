@@ -1,13 +1,13 @@
-# Savings Bonds API
+# I-Bond Rates API
 
-Savings Bonds provides current and historical rates for US Savings Bonds including Series I (I Bonds) and Series EE bonds. Includes rate components, purchase limits, and comparison recommendations.
+I-Bond Rates provides current and historical interest rates for US Series I Savings Bonds. I-Bonds are inflation-protected savings bonds with a composite rate made up of a fixed rate plus an inflation rate that adjusts every 6 months.
 
 ![Build Status](https://img.shields.io/badge/build-passing-green)
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/savingsbonds.svg)](https://www.npmjs.com/package/@apiverve/savingsbonds)
 
-This is a Javascript Wrapper for the [Savings Bonds API](https://apiverve.com/marketplace/savingsbonds?utm_source=npm&utm_medium=readme)
+This is a Javascript Wrapper for the [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source=npm&utm_medium=readme)
 
 ---
 
@@ -27,7 +27,7 @@ yarn add @apiverve/savingsbonds
 
 ## Configuration
 
-Before using the Savings Bonds API client, you have to setup your account and obtain your API Key.
+Before using the I-Bond Rates API client, you have to setup your account and obtain your API Key.
 You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=npm&utm_medium=readme)
 
 ---
@@ -36,7 +36,7 @@ You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_
 
 [Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart?utm_source=npm&utm_medium=readme)
 
-The Savings Bonds API documentation is found here: [https://docs.apiverve.com/ref/savingsbonds](https://docs.apiverve.com/ref/savingsbonds?utm_source=npm&utm_medium=readme).
+The I-Bond Rates API documentation is found here: [https://docs.apiverve.com/ref/savingsbonds](https://docs.apiverve.com/ref/savingsbonds?utm_source=npm&utm_medium=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -60,7 +60,7 @@ Using the API is simple. All you have to do is make a request. The API will retu
 
 ```javascript
 var query = {
-  type: "i"
+  period: "2024-11"
 };
 
 api.execute(query, function (error, data) {
@@ -80,7 +80,7 @@ You can also use promises to make requests. The API returns a promise that you c
 
 ```javascript
 var query = {
-  type: "i"
+  period: "2024-11"
 };
 
 api.execute(query)
@@ -101,7 +101,7 @@ You can also use async/await to make requests. The API returns a promise that yo
 ```javascript
 async function makeRequest() {
     var query = {
-  type: "i"
+  period: "2024-11"
 };
 
     try {

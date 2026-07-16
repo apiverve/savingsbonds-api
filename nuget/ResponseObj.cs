@@ -6,7 +6,7 @@
 //
 //    var responseObj = ResponseObj.FromJson(jsonString);
 
-namespace APIVerve.API.SavingsBonds
+namespace APIVerve.API.I-BondRates
 {
     using System;
     using System.Collections.Generic;
@@ -25,6 +25,9 @@ namespace APIVerve.API.SavingsBonds
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -42,36 +45,48 @@ namespace APIVerve.API.SavingsBonds
         public string RecommendationReason { get; set; }
 
         [JsonProperty("nextRateChange")]
-        public DateTimeOffset NextRateChange { get; set; }
+        public DateTimeOffset? NextRateChange { get; set; }
 
         [JsonProperty("lastUpdated")]
-        public DateTimeOffset LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get; set; }
     }
 
     public partial class EeBonds
     {
         [JsonProperty("currentRate")]
-        public double CurrentRate { get; set; }
+        public double? CurrentRate { get; set; }
 
         [JsonProperty("guaranteedDoubling")]
         public string GuaranteedDoubling { get; set; }
 
         [JsonProperty("purchaseLimit")]
-        public long PurchaseLimit { get; set; }
+        public long? PurchaseLimit { get; set; }
     }
 
     public partial class IBonds
     {
         [JsonProperty("currentRate")]
-        public double CurrentRate { get; set; }
+        public double? CurrentRate { get; set; }
 
         [JsonProperty("fixedRate")]
-        public double FixedRate { get; set; }
+        public double? FixedRate { get; set; }
 
         [JsonProperty("inflationRate")]
-        public double InflationRate { get; set; }
+        public double? InflationRate { get; set; }
 
         [JsonProperty("purchaseLimit")]
-        public long PurchaseLimit { get; set; }
+        public long? PurchaseLimit { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }

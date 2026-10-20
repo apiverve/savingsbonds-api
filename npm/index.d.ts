@@ -25,25 +25,16 @@ declare module '@apiverve/savingsbonds' {
 
 
   interface IBondRatesData {
-      iBonds:               IBonds;
-      eeBonds:              EeBonds;
-      recommendation:       null | string;
-      recommendationReason: null | string;
-      nextRateChange:       Date | null;
-      lastUpdated:          Date | null;
-  }
-  
-  interface EeBonds {
-      currentRate:        number | null;
-      guaranteedDoubling: null | string;
-      purchaseLimit:      number | null;
-  }
-  
-  interface IBonds {
-      currentRate:   number | null;
-      fixedRate:     number | null;
-      inflationRate: number | null;
-      purchaseLimit: number | null;
+      period:                 null | string;
+      compositeRate:          number | null;
+      fixedRate:              number | null;
+      inflationRate:          number | null;
+      purchaseLimit:          number | null;
+      minimumHoldingPeriod:   null | string;
+      earlyRedemptionPenalty: null | string;
+      taxAdvantages:          null | string;
+      nextRateChange:         Date | null;
+      lastUpdated:            Date | null;
   }
 
   export default class savingsbondsWrapper {

@@ -1,13 +1,13 @@
-# [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
 I-Bond Rates provides current and historical interest rates for US Series I Savings Bonds. I-Bonds are inflation-protected savings bonds with a composite rate made up of a fixed rate plus an inflation rate that adjusts every 6 months.
 
 The I-Bond Rates API provides a simple, reliable way to integrate i-bond rates functionality into your applications. Built for developers who need production-ready i-bond rates capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -157,7 +157,7 @@ go get github.com/apiverve/savingsbonds-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/savingsbonds](https://docs.apiverve.com/ref/savingsbonds)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -187,11 +187,37 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the I-Bond Rates API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "period": "2026-10",
+    "compositeRate": 4.26,
+    "fixedRate": 0.9,
+    "inflationRate": 1.67,
+    "purchaseLimit": 10000,
+    "minimumHoldingPeriod": "1 year",
+    "earlyRedemptionPenalty": "Last 3 months interest if redeemed before 5 years",
+    "taxAdvantages": "Federal tax deferred until redemption; exempt from state/local tax; may be tax-free for education",
+    "nextRateChange": "2026-11-01",
+    "lastUpdated": "2026-09-01T15:00:29.761Z"
+  }
 }
 ```
 
@@ -199,7 +225,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

@@ -20,7 +20,7 @@ servers:
 paths:
   /v1/savingsbonds:
     get:
-      summary: Get I-Bond Rates
+      summary: I-Bond Rates
       description: Get current I-Bond rates and historical rate data
       operationId: savingsbonds
       parameters:
@@ -54,19 +54,18 @@ paths:
                 status: ok
                 error: null
                 data:
-                  iBonds:
-                    currentRate: 5.27
-                    fixedRate: 1.3
-                    inflationRate: 1.97
-                    purchaseLimit: 10000
-                  eeBonds:
-                    currentRate: 2.7
-                    guaranteedDoubling: 20 years (guaranteed to double in value)
-                    purchaseLimit: 10000
-                  recommendation: I Bonds
-                  recommendationReason: I Bonds currently offer 5.27% vs EE Bonds at 2.70%
-                  nextRateChange: '2024-05-01'
-                  lastUpdated: '2024-02-01T00:00:00.000Z'
+                  period: 2026-10
+                  compositeRate: 4.26
+                  fixedRate: 0.9
+                  inflationRate: 1.67
+                  purchaseLimit: 10000
+                  minimumHoldingPeriod: 1 year
+                  earlyRedemptionPenalty: Last 3 months interest if redeemed before 5 years
+                  taxAdvantages: >-
+                    Federal tax deferred until redemption; exempt from
+                    state/local tax; may be tax-free for education
+                  nextRateChange: '2026-11-01'
+                  lastUpdated: '2026-09-01T15:00:29.761Z'
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':

@@ -1,13 +1,12 @@
-I-BondRates API
+I-Bond Rates API
 ============
 
 I-Bond Rates provides current and historical interest rates for US Series I Savings Bonds. I-Bonds are inflation-protected savings bonds with a composite rate made up of a fixed rate plus an inflation rate that adjusts every 6 months.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [I-BondRates API](https://apiverve.com/marketplace/savingsbonds?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.I-BondRates.svg)](https://www.nuget.org/packages/APIVerve.API.I-BondRates)
+
+This is a .NET wrapper for the [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the savingsbonds API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the I-Bond Rates API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,8 +60,8 @@ class Program
         var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new I-BondRatesQueryOptions {
-    Period = "2024-11"
-};
+            Period = "2024-11"
+        };
 
         // Make the API call
         try
@@ -92,13 +91,13 @@ class Program
 
 ## Usage
 
-The I-BondRates API documentation is found here: [https://docs.apiverve.com/ref/savingsbonds](https://docs.apiverve.com/ref/savingsbonds?utm_source=nuget&utm_medium=readme).
+The I-Bond Rates API documentation is found here: [https://docs.apiverve.com/ref/savingsbonds](https://docs.apiverve.com/ref/savingsbonds?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-I-BondRates API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+I-Bond Rates API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -125,8 +124,8 @@ public class Example
         var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new I-BondRatesQueryOptions {
-    Period = "2024-11"
-};
+            Period = "2024-11"
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -157,8 +156,8 @@ public class Example
         var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new I-BondRatesQueryOptions {
-    Period = "2024-11"
-};
+            Period = "2024-11"
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -194,8 +193,8 @@ public class Example
         var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new I-BondRatesQueryOptions {
-    Period = "2024-11"
-};
+            Period = "2024-11"
+        };
 
         try
         {
@@ -250,8 +249,8 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new I-BondRatesQueryOptions {
-    Period = "2024-11"
-};
+            Period = "2024-11"
+        };
 
         try
         {
@@ -367,21 +366,16 @@ using (var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "iBonds": {
-      "currentRate": 5.27,
-      "fixedRate": 1.3,
-      "inflationRate": 1.97,
-      "purchaseLimit": 10000
-    },
-    "eeBonds": {
-      "currentRate": 2.7,
-      "guaranteedDoubling": "20 years (guaranteed to double in value)",
-      "purchaseLimit": 10000
-    },
-    "recommendation": "I Bonds",
-    "recommendationReason": "I Bonds currently offer 5.27% vs EE Bonds at 2.70%",
-    "nextRateChange": "2024-05-01",
-    "lastUpdated": "2024-02-01T00:00:00.000Z"
+    "period": "2026-10",
+    "compositeRate": 4.26,
+    "fixedRate": 0.9,
+    "inflationRate": 1.67,
+    "purchaseLimit": 10000,
+    "minimumHoldingPeriod": "1 year",
+    "earlyRedemptionPenalty": "Last 3 months interest if redeemed before 5 years",
+    "taxAdvantages": "Federal tax deferred until redemption; exempt from state/local tax; may be tax-free for education",
+    "nextRateChange": "2026-11-01",
+    "lastUpdated": "2026-09-01T15:00:29.761Z"
   }
 }
 ```
@@ -390,7 +384,7 @@ using (var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -401,12 +395,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

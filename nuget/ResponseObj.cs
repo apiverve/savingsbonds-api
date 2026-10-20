@@ -32,41 +32,11 @@ namespace APIVerve.API.I-BondRates
 
     public partial class Data
     {
-        [JsonProperty("iBonds")]
-        public IBonds IBonds { get; set; }
+        [JsonProperty("period")]
+        public string Period { get; set; }
 
-        [JsonProperty("eeBonds")]
-        public EeBonds EeBonds { get; set; }
-
-        [JsonProperty("recommendation")]
-        public string Recommendation { get; set; }
-
-        [JsonProperty("recommendationReason")]
-        public string RecommendationReason { get; set; }
-
-        [JsonProperty("nextRateChange")]
-        public DateTimeOffset? NextRateChange { get; set; }
-
-        [JsonProperty("lastUpdated")]
-        public DateTimeOffset? LastUpdated { get; set; }
-    }
-
-    public partial class EeBonds
-    {
-        [JsonProperty("currentRate")]
-        public double? CurrentRate { get; set; }
-
-        [JsonProperty("guaranteedDoubling")]
-        public string GuaranteedDoubling { get; set; }
-
-        [JsonProperty("purchaseLimit")]
-        public long? PurchaseLimit { get; set; }
-    }
-
-    public partial class IBonds
-    {
-        [JsonProperty("currentRate")]
-        public double? CurrentRate { get; set; }
+        [JsonProperty("compositeRate")]
+        public double? CompositeRate { get; set; }
 
         [JsonProperty("fixedRate")]
         public double? FixedRate { get; set; }
@@ -76,6 +46,21 @@ namespace APIVerve.API.I-BondRates
 
         [JsonProperty("purchaseLimit")]
         public long? PurchaseLimit { get; set; }
+
+        [JsonProperty("minimumHoldingPeriod")]
+        public string MinimumHoldingPeriod { get; set; }
+
+        [JsonProperty("earlyRedemptionPenalty")]
+        public string EarlyRedemptionPenalty { get; set; }
+
+        [JsonProperty("taxAdvantages")]
+        public string TaxAdvantages { get; set; }
+
+        [JsonProperty("nextRateChange")]
+        public DateTimeOffset? NextRateChange { get; set; }
+
+        [JsonProperty("lastUpdated")]
+        public DateTimeOffset? LastUpdated { get; set; }
     }
 
     public partial class Premium

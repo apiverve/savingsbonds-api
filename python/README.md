@@ -1,13 +1,12 @@
-Savings Bonds API
+I-Bond Rates API
 ============
 
-Savings Bonds provides current and historical rates for US Savings Bonds including Series I (I Bonds) and Series EE bonds. Includes rate components, purchase limits, and comparison recommendations.
+I-Bond Rates provides current and historical interest rates for US Series I Savings Bonds. I-Bonds are inflation-protected savings bonds with a composite rate made up of a fixed rate plus an inflation rate that adjusts every 6 months.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Savings Bonds API](https://apiverve.com/marketplace/savingsbonds?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-i-bondrates.svg)](https://pypi.org/project/apiverve-i-bondrates/)
+
+This is a Python wrapper for the [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -16,21 +15,21 @@ This is a Python API Wrapper for the [Savings Bonds API](https://apiverve.com/ma
 Using `pip`:
 
 ```bash
-pip install apiverve-savingsbonds
+pip install apiverve-i-bondrates
 ```
 
 Using `pip3`:
 
 ```bash
-pip3 install apiverve-savingsbonds
+pip3 install apiverve-i-bondrates
 ```
 
 ---
 
 ## Configuration
 
-Before using the savingsbonds API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the I-Bond Rates API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -39,12 +38,12 @@ You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_
 Here's a simple example to get you started quickly:
 
 ```python
-from apiverve_savingsbonds.apiClient import SavingsbondsAPIClient
+from apiverve_i-bondrates.apiClient import SavingsbondsAPIClient
 
 # Initialize the client with your APIVerve API key
 api = SavingsbondsAPIClient("[YOUR_API_KEY]")
 
-query = { "type": "i" }
+query = { "period": "2024-11" }
 
 try:
     # Make the API call
@@ -60,14 +59,14 @@ except Exception as e:
 
 ## Usage
 
-The Savings Bonds API documentation is found here: [https://docs.apiverve.com/ref/savingsbonds](https://docs.apiverve.com/ref/savingsbonds?utm_source=pypi&utm_medium=readme).
+The I-Bond Rates API documentation is found here: [https://docs.apiverve.com/ref/savingsbonds](https://docs.apiverve.com/ref/savingsbonds?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ```python
 # Import the client module
-from apiverve_savingsbonds.apiClient import SavingsbondsAPIClient
+from apiverve_i-bondrates.apiClient import SavingsbondsAPIClient
 
 # Initialize the client with your APIVerve API key
 api = SavingsbondsAPIClient("[YOUR_API_KEY]")
@@ -82,7 +81,7 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "type": "i" }
+query = { "period": "2024-11" }
 ```
 
 ###### Simple Request
@@ -102,21 +101,16 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "iBonds": {
-      "currentRate": 5.27,
-      "fixedRate": 1.3,
-      "inflationRate": 1.97,
-      "purchaseLimit": 10000
-    },
-    "eeBonds": {
-      "currentRate": 2.7,
-      "guaranteedDoubling": "20 years (guaranteed to double in value)",
-      "purchaseLimit": 10000
-    },
-    "recommendation": "I Bonds",
-    "recommendationReason": "I Bonds currently offer 5.27% vs EE Bonds at 2.70%",
-    "nextRateChange": "2024-05-01",
-    "lastUpdated": "2024-02-01T00:00:00.000Z"
+    "period": "2026-10",
+    "compositeRate": 4.26,
+    "fixedRate": 0.9,
+    "inflationRate": 1.67,
+    "purchaseLimit": 10000,
+    "minimumHoldingPeriod": "1 year",
+    "earlyRedemptionPenalty": "Last 3 months interest if redeemed before 5 years",
+    "taxAdvantages": "Federal tax deferred until redemption; exempt from state/local tax; may be tax-free for education",
+    "nextRateChange": "2026-11-01",
+    "lastUpdated": "2026-09-01T15:00:29.761Z"
   }
 }
 ```
@@ -130,11 +124,11 @@ The API client provides comprehensive error handling through the `SavingsbondsAP
 ### Basic Error Handling
 
 ```python
-from apiverve_savingsbonds.apiClient import SavingsbondsAPIClient, SavingsbondsAPIClientError
+from apiverve_i-bondrates.apiClient import SavingsbondsAPIClient, SavingsbondsAPIClientError
 
 api = SavingsbondsAPIClient("[YOUR_API_KEY]")
 
-query = { "type": "i" }
+query = { "period": "2024-11" }
 
 try:
     result = api.execute(query)
@@ -151,11 +145,11 @@ except SavingsbondsAPIClientError as e:
 ### Handling Specific Error Types
 
 ```python
-from apiverve_savingsbonds.apiClient import SavingsbondsAPIClient, SavingsbondsAPIClientError
+from apiverve_i-bondrates.apiClient import SavingsbondsAPIClient, SavingsbondsAPIClientError
 
 api = SavingsbondsAPIClient("[YOUR_API_KEY]")
 
-query = { "type": "i" }
+query = { "period": "2024-11" }
 
 try:
     result = api.execute(query)
@@ -187,9 +181,9 @@ except Exception as e:
 The client supports the context manager protocol for automatic resource cleanup:
 
 ```python
-from apiverve_savingsbonds.apiClient import SavingsbondsAPIClient, SavingsbondsAPIClientError
+from apiverve_i-bondrates.apiClient import SavingsbondsAPIClient, SavingsbondsAPIClientError
 
-query = { "type": "i" }
+query = { "period": "2024-11" }
 
 # Using context manager ensures proper cleanup
 with SavingsbondsAPIClient("[YOUR_API_KEY]") as api:
@@ -210,12 +204,12 @@ with SavingsbondsAPIClient("[YOUR_API_KEY]") as api:
 Enable debug logging to see detailed request and response information:
 
 ```python
-from apiverve_savingsbonds.apiClient import SavingsbondsAPIClient
+from apiverve_i-bondrates.apiClient import SavingsbondsAPIClient
 
 # Enable debug mode
 api = SavingsbondsAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "type": "i" }
+query = { "period": "2024-11" }
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -226,11 +220,11 @@ result = api.execute(query)
 If you need to manually manage the session lifecycle:
 
 ```python
-from apiverve_savingsbonds.apiClient import SavingsbondsAPIClient
+from apiverve_i-bondrates.apiClient import SavingsbondsAPIClient
 
 api = SavingsbondsAPIClient("[YOUR_API_KEY]")
 
-query = { "type": "i" }
+query = { "period": "2024-11" }
 
 try:
     result = api.execute(query)
@@ -244,7 +238,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -255,12 +249,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

@@ -6,7 +6,7 @@
 //
 //    var responseObj = ResponseObj.FromJson(jsonString);
 
-namespace APIVerve.API.I-BondRates
+namespace APIVerve.API.IBondRates
 {
     using System;
     using System.Collections.Generic;

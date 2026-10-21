@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Net;
 #endif
 
-namespace APIVerve.API.I-BondRates
+namespace APIVerve.API.IBondRates
 {
     /// <summary>
     /// Validation rule for a parameter
@@ -54,9 +54,9 @@ namespace APIVerve.API.I-BondRates
     }
 
     /// <summary>
-    /// Client for the I-BondRates API
+    /// Client for the IBondRates API
     /// </summary>
-    public class I-BondRatesAPIClient
+    public class IBondRatesAPIClient
 #if !NET20 && !NET35 && !NET40
         : IDisposable
 #endif
@@ -100,7 +100,7 @@ namespace APIVerve.API.I-BondRates
         /// </summary>
         /// <param name="apiKey">Your API key from https://apiverve.com</param>
         /// <exception cref="ArgumentException">Thrown when API key is invalid</exception>
-        public I-BondRatesAPIClient(string apiKey)
+        public IBondRatesAPIClient(string apiKey)
 #if !NET20 && !NET35 && !NET40
             : this(apiKey, true, false, null)
 #endif
@@ -123,7 +123,7 @@ namespace APIVerve.API.I-BondRates
         /// <param name="isSecure">Use HTTPS (recommended)</param>
         /// <param name="isDebug">Enable debug logging</param>
         /// <exception cref="ArgumentException">Thrown when API key is invalid</exception>
-        public I-BondRatesAPIClient(string apiKey, bool isSecure, bool isDebug)
+        public IBondRatesAPIClient(string apiKey, bool isSecure, bool isDebug)
 #if !NET20 && !NET35 && !NET40
             : this(apiKey, isSecure, isDebug, null)
 #endif
@@ -148,7 +148,7 @@ namespace APIVerve.API.I-BondRates
         /// <param name="isDebug">Enable debug logging</param>
         /// <param name="httpClient">Custom HttpClient instance (optional). If null, a new instance will be created.</param>
         /// <exception cref="ArgumentException">Thrown when API key is invalid</exception>
-        public I-BondRatesAPIClient(string apiKey, bool isSecure, bool isDebug, HttpClient httpClient)
+        public IBondRatesAPIClient(string apiKey, bool isSecure, bool isDebug, HttpClient httpClient)
         {
             // Validate API key format
             ValidateApiKey(apiKey);
@@ -303,7 +303,7 @@ namespace APIVerve.API.I-BondRates
         /// </summary>
         /// <param name="callback">Callback to invoke with the result</param>
         /// <param name="options">Query parameters</param>
-        public void ExecuteAsync(ExecuteAsyncCallback callback, I-BondRatesQueryOptions options = null)
+        public void ExecuteAsync(ExecuteAsyncCallback callback, IBondRatesQueryOptions options = null)
         {
             if (callback == null)
             {
@@ -340,7 +340,7 @@ namespace APIVerve.API.I-BondRates
         /// <param name="callback">Callback to invoke with the result</param>
         /// <param name="options">Query parameters</param>
         [Obsolete("Use ExecuteAsync() with async/await pattern instead")]
-        public void ExecuteAsync(ExecuteAsyncCallback callback, I-BondRatesQueryOptions options = null)
+        public void ExecuteAsync(ExecuteAsyncCallback callback, IBondRatesQueryOptions options = null)
         {
             if (callback == null)
             {
@@ -371,7 +371,7 @@ namespace APIVerve.API.I-BondRates
         /// </summary>
         /// <param name="options">Query options to validate</param>
         /// <exception cref="ValidationException">Thrown when validation fails</exception>
-        private void ValidateParams(I-BondRatesQueryOptions options)
+        private void ValidateParams(IBondRatesQueryOptions options)
         {
             if (_validationRules == null || _validationRules.Count == 0) return;
 
@@ -465,7 +465,7 @@ namespace APIVerve.API.I-BondRates
         /// <exception cref="WebException">Thrown when the request fails (.NET 2.0-4.0)</exception>
         /// <exception cref="HttpRequestException">Thrown when the request fails (.NET 4.5+)</exception>
         /// <exception cref="ValidationException">Thrown when parameter validation fails</exception>
-        public ResponseObj Execute(I-BondRatesQueryOptions options = null)
+        public ResponseObj Execute(IBondRatesQueryOptions options = null)
         {
             // Validate parameters before making request
             ValidateParams(options);
@@ -484,7 +484,7 @@ namespace APIVerve.API.I-BondRates
         /// <param name="options">Query parameters</param>
         /// <returns>Task containing the API response</returns>
         /// <exception cref="HttpRequestException">Thrown when the request fails</exception>
-        public Task<ResponseObj> ExecuteAsync(I-BondRatesQueryOptions options = null)
+        public Task<ResponseObj> ExecuteAsync(IBondRatesQueryOptions options = null)
         {
             return ExecuteAsync(options, CancellationToken.None);
         }
@@ -497,7 +497,7 @@ namespace APIVerve.API.I-BondRates
         /// <returns>Task containing the API response</returns>
         /// <exception cref="HttpRequestException">Thrown when the request fails</exception>
         /// <exception cref="OperationCanceledException">Thrown when the operation is cancelled</exception>
-        public async Task<ResponseObj> ExecuteAsync(I-BondRatesQueryOptions options, CancellationToken cancellationToken)
+        public async Task<ResponseObj> ExecuteAsync(IBondRatesQueryOptions options, CancellationToken cancellationToken)
         {
             int attempt = 0;
             Exception lastException = null;
@@ -546,7 +546,7 @@ namespace APIVerve.API.I-BondRates
         /// <summary>
         /// Executes the actual HTTP request
         /// </summary>
-        private async Task<ResponseObj> ExecuteRequestAsync(I-BondRatesQueryOptions options, CancellationToken cancellationToken)
+        private async Task<ResponseObj> ExecuteRequestAsync(IBondRatesQueryOptions options, CancellationToken cancellationToken)
         {
             try
             {
@@ -641,7 +641,7 @@ namespace APIVerve.API.I-BondRates
         /// <summary>
         /// Execute the API call using WebRequest (for .NET 2.0-4.0)
         /// </summary>
-        private ResponseObj ExecuteWithWebRequest(I-BondRatesQueryOptions options)
+        private ResponseObj ExecuteWithWebRequest(IBondRatesQueryOptions options)
         {
             int attempt = 0;
             Exception lastException = null;
@@ -684,7 +684,7 @@ namespace APIVerve.API.I-BondRates
         /// <summary>
         /// Internal WebRequest execution
         /// </summary>
-        private ResponseObj ExecuteWebRequestInternal(I-BondRatesQueryOptions options)
+        private ResponseObj ExecuteWebRequestInternal(IBondRatesQueryOptions options)
         {
             try
             {
@@ -806,7 +806,7 @@ namespace APIVerve.API.I-BondRates
         /// <summary>
         /// Constructs the full API URL with query parameters
         /// </summary>
-        private string ConstructURL(I-BondRatesQueryOptions options)
+        private string ConstructURL(IBondRatesQueryOptions options)
         {
             string url = _apiEndpoint;
 

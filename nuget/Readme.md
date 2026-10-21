@@ -4,7 +4,7 @@ I-Bond Rates API
 I-Bond Rates provides current and historical interest rates for US Series I Savings Bonds. I-Bonds are inflation-protected savings bonds with a composite rate made up of a fixed rate plus an inflation rate that adjusts every 6 months.
 
 
-[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.I-BondRates.svg)](https://www.nuget.org/packages/APIVerve.API.I-BondRates)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.IBondRates.svg)](https://www.nuget.org/packages/APIVerve.API.IBondRates)
 
 This is a .NET wrapper for the [I-Bond Rates API](https://apiverve.com/marketplace/savingsbonds?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
@@ -14,17 +14,17 @@ This is a .NET wrapper for the [I-Bond Rates API](https://apiverve.com/marketpla
 
 Using the .NET CLI:
 ```
-dotnet add package APIVerve.API.I-BondRates
+dotnet add package APIVerve.API.IBondRates
 ```
 
 Using the Package Manager:
 ```
-nuget install APIVerve.API.I-BondRates
+nuget install APIVerve.API.IBondRates
 ```
 
 Using the Package Manager Console:
 ```
-Install-Package APIVerve.API.I-BondRates
+Install-Package APIVerve.API.IBondRates
 ```
 
 From within Visual Studio:
@@ -32,8 +32,8 @@ From within Visual Studio:
 1. Open the Solution Explorer
 2. Right-click on a project within your solution
 3. Click on Manage NuGet Packages
-4. Click on the Browse tab and search for "APIVerve.API.I-BondRates"
-5. Click on the APIVerve.API.I-BondRates package, select the appropriate version in the right-tab and click Install
+4. Click on the Browse tab and search for "APIVerve.API.IBondRates"
+5. Click on the APIVerve.API.IBondRates package, select the appropriate version in the right-tab and click Install
 
 ---
 
@@ -50,16 +50,16 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve.API.I-BondRates;
+using APIVerve.API.IBondRates;
 
 class Program
 {
     static async Task Main(string[] args)
     {
         // Initialize the API client
-        var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
+        var apiClient = new IBondRatesAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new I-BondRatesQueryOptions {
+        var queryOptions = new IBondRatesQueryOptions {
             Period = "2024-11"
         };
 
@@ -101,7 +101,7 @@ I-Bond Rates API uses API Key-based authentication. When you create an instance 
 
 ```csharp
 // Create an instance of the API client
-var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
+var apiClient = new IBondRatesAPIClient("[YOUR_API_KEY]");
 ```
 
 ---
@@ -115,15 +115,15 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve.API.I-BondRates;
+using APIVerve.API.IBondRates;
 
 public class Example
 {
     public static async Task Main(string[] args)
     {
-        var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
+        var apiClient = new IBondRatesAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new I-BondRatesQueryOptions {
+        var queryOptions = new IBondRatesQueryOptions {
             Period = "2024-11"
         };
 
@@ -147,15 +147,15 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve.API.I-BondRates;
+using APIVerve.API.IBondRates;
 
 public class Example
 {
     public static void Main(string[] args)
     {
-        var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
+        var apiClient = new IBondRatesAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new I-BondRatesQueryOptions {
+        var queryOptions = new IBondRatesQueryOptions {
             Period = "2024-11"
         };
 
@@ -184,15 +184,15 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve.API.I-BondRates;
+using APIVerve.API.IBondRates;
 
 public class Example
 {
     public static async Task Main(string[] args)
     {
-        var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
+        var apiClient = new IBondRatesAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new I-BondRatesQueryOptions {
+        var queryOptions = new IBondRatesQueryOptions {
             Period = "2024-11"
         };
 
@@ -236,19 +236,19 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve.API.I-BondRates;
+using APIVerve.API.IBondRates;
 
 public class Example
 {
     public static async Task Main(string[] args)
     {
-        var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
+        var apiClient = new IBondRatesAPIClient("[YOUR_API_KEY]");
 
         // Configure retry behavior (max 3 retries)
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new I-BondRatesQueryOptions {
+        var queryOptions = new IBondRatesQueryOptions {
             Period = "2024-11"
         };
 
@@ -283,13 +283,13 @@ public class Example
 Add custom headers to your requests:
 
 ```csharp
-var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
+var apiClient = new IBondRatesAPIClient("[YOUR_API_KEY]");
 
 // Add custom headers
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new I-BondRatesQueryOptions {
+var queryOptions = new IBondRatesQueryOptions {
     Period = "2024-11"
 };
 
@@ -307,7 +307,7 @@ apiClient.ClearCustomHeaders();
 Enable logging for debugging:
 
 ```csharp
-var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]", isDebug: true);
+var apiClient = new IBondRatesAPIClient("[YOUR_API_KEY]", isDebug: true);
 
 // Or use a custom logger
 apiClient.SetLogger(message =>
@@ -315,7 +315,7 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new I-BondRatesQueryOptions {
+var queryOptions = new IBondRatesQueryOptions {
     Period = "2024-11"
 };
 
@@ -327,13 +327,13 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 Customize retry behavior for failed requests:
 
 ```csharp
-var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]");
+var apiClient = new IBondRatesAPIClient("[YOUR_API_KEY]");
 
 // Set retry options
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new I-BondRatesQueryOptions {
+var queryOptions = new IBondRatesQueryOptions {
     Period = "2024-11"
 };
 
@@ -345,11 +345,11 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new I-BondRatesQueryOptions {
+var queryOptions = new IBondRatesQueryOptions {
     Period = "2024-11"
 };
 
-using (var apiClient = new I-BondRatesAPIClient("[YOUR_API_KEY]"))
+using (var apiClient = new IBondRatesAPIClient("[YOUR_API_KEY]"))
 {
     var response = await apiClient.ExecuteAsync(queryOptions);
     Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(response, Newtonsoft.Json.Formatting.Indented));

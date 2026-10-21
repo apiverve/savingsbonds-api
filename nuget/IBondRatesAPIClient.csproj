@@ -25,7 +25,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-    <PackageId>APIVerve.API.I-BondRates</PackageId>
+    <PackageId>APIVerve.API.IBondRates</PackageId>
     <Nullable>disable</Nullable>
     <LangVersion>latest</LangVersion>
 

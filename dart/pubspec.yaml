@@ -1,0 +1,16 @@
+name: apiverve_savingsbonds
+description: "I-Bond Rates provides current and historical interest rates for US Series I Savings Bonds. I-Bonds are inflation-protected savings bonds with a composite rate made up of a fixed rate plus an inflation rate that adjusts every 6 months."
+version: 1.2.6
+homepage: https://apiverve.com/marketplace/savingsbonds?utm_source=dart&utm_medium=referral&utm_content=homepage
+repository: https://github.com/apiverve/savingsbonds-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
